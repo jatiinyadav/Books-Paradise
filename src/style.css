@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* background: #282c34; */
+  background: url("./Background-img.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+img {
+  height: 12rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+  /* backdrop-filter: blur(10px); */
+}
+
+input[type="text"] {
+  width: 20em;
+  height: 3em;
+  padding: 10px 10px;
+}
+
+h1 {
+  color: black;
+  font-size: 1.5rem;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 1rem;
+  color: crimson;
+}
+
+h3 {
+  color: black;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: crimson;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.8rem;
+}
+
+.books-bg {
+  background: #c9a8bd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 120rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.custom-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: rgb(53, 52, 52);
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .container-articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .loading-name {
+    font-size: 1rem;
+  }
+
+  .heading-name {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+
+/* 
+.container-articles {
+  width: 80%;
+  max-width: 120rem;
+  height: 100%;
+  margin: 2rem auto;
+  text-align: left;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+} */
