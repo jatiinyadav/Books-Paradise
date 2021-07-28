@@ -9,16 +9,14 @@ import "./style.css";
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
 
-  const [term, setTerm] = useState("Harry Potter");
+  const [term, setTerm] = useState("Ruskin Bond");
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(async () => {
+    setIsLoading(true);
     const resources = await axios.get(
-      // `https://api.nytimes.com/svc/books/v3/lists/current/${term}.json?api-key=Q4uIicaYPeZUVesmoxUGkxEmb0xm9n7r`
-      // `https://api.nytimes.com/svc/books/v3/lists/best-sellers/${term}.json?api-key=Q4uIicaYPeZUVesmoxUGkxEmb0xm9n7r`
-      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=11&startIndex=2`
-      // `https://www.googleapis.com/books/v1/volumes?q=${term}&key=AIzaSyB5xfYcsknuZGuVKTNfM2wl2U2cVOhOpiw&maxResult=14`
+      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=11`
     );
     setDetails(resources.data.items);
     setIsLoading(false);
@@ -29,7 +27,7 @@ const BookDetails = () => {
       <h2
         style={{
           textTransform: "capitalize",
-          color: "crimson",
+          color: "#DB4437",
           fontFamily: "Michroma",
         }}
       >
@@ -42,13 +40,14 @@ const BookDetails = () => {
           style={{
             background: "white",
             borderRadius: "1rem",
-            color: "crimson",
+            color: "#DB4437",
             padding: "1rem",
             position: "absolute",
             top: "50%",
             left: "50%",
             fontFamily: "Michroma",
             transform: "translate(-50%,-50%)",
+            textTransform: "capitalize",
           }}
         >
           Fetching {term} books for you....
@@ -62,141 +61,129 @@ const BookDetails = () => {
                 volumeInfo: {
                   title,
                   authors,
-                  industryIdentifiers,
-                  pageCount,
-                  averageRating,
-                  language,
+                  publisher,
                   previewLink,
-                  imageLinks: { thumbnail },
+                  imageLinks,
                 },
-                saleInfo: { country },
               } = book;
 
               return (
-                <article key={id} className="books-bg">
-                  <img src={thumbnail} alt="Book-img" />
+                <section key={id} className="books-bg">
+                  <div>
+                    <div>
+                      {imageLinks && (
+                        <img
+                          src={imageLinks.thumbnail}
+                          width="100px"
+                          alt="Book-cover"
+                        />
+                      )}
+                    </div>
+                    <div>
+                      {title && (
+                        <div>
+                          <h3 className="inline">{title}</h3>
+                        </div>
+                      )}
+                    </div>
 
-                  <h3>{title}</h3>
+                    <div>
+                      {authors && (
+                        <h4 style={{ paddingBottom: "1rem", color: "black" }}>
+                          {" "}
+                          Author:{" "}
+                          <span
+                            style={{
+                              fontWeight: "bold",
+                              color: "#3B3B3B",
+                            }}
+                          >
+                            {" "}
+                            {authors}{" "}
+                          </span>
+                        </h4>
+                      )}
+                    </div>
 
-                  <h4 style={{ paddingBottom: "1rem" }}>
-                    {" "}
-                    By:{" "}
-                    <span
+                    <div>
+                      {publisher && (
+                        <h5 style={{ paddingBottom: "1rem", color: "black" }}>
+                          {" "}
+                          Published by:{" "}
+                          <span
+                            style={{
+                              fontWeight: "bold",
+                              color: "#3B3B3B",
+                            }}
+                          >
+                            {" "}
+                            {publisher}{" "}
+                          </span>
+                        </h5>
+                      )}
+                    </div>
+
+                    <div>
+                      {previewLink && (
+                        <h5
+                          style={{
+                            fontWeight: "bold",
+                            color: "black",
+                            paddingBottom: "1rem",
+                          }}
+                        >
+                          Read more :{" "}
+                          <a
+                            href={previewLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            Google Books <BiLinkExternal></BiLinkExternal>{" "}
+                          </a>
+                        </h5>
+                      )}
+                    </div>
+
+                    {/* <div
                       style={{
-                        fontWeight: "bold",
-                        color: "crimson",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        paddingTop: "1rem",
                       }}
-                    >
-                      {" "}
-                      {authors}{" "}
-                    </span>
-                  </h4>
-                  <p
-                    style={{
-                      fontWeight: "bold",
-                      color: "black",
-                      paddingBottom: "1rem",
-                    }}
-                  >
-                    Preview Here :{" "}
-                    <a href={previewLink}>
-                      {" "}
-                      Google Books <BiLinkExternal></BiLinkExternal>{" "}
-                    </a>
-                  </p>
-
-                  {industryIdentifiers.map((props) => {
-                    const { type, identifier } = props;
-
-                    return (
-                      <div>
-                        <ul>
-                          <li>
-                            <span
-                              style={{ fontWeight: "bold", color: "black" }}
-                            >
-                              Type:{" "}
-                            </span>{" "}
-                            {type} {" &  "}
-                            <span
-                              style={{ fontWeight: "bold", color: "black" }}
-                            >
-                              {" "}
-                              Identifier:{" "}
-                            </span>{" "}
-                            {identifier}
-                          </li>
-                        </ul>
-                      </div>
-                    );
-                  })}
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      paddingTop: "1rem",
-                    }}
-                  >
-                    <p>
-                      {" "}
-                      <span style={{ fontWeight: "bold", color: "black" }}>
+                    > {language && }
+                      <p>
                         {" "}
-                        Page Count :{" "}
-                      </span>{" "}
-                      {pageCount}
-                    </p>
-                    <p>
-                      {" "}
-                      <span
-                        style={{
-                          fontWeight: "bold",
-                          color: "black",
-                          marginLeft: "1rem",
-                        }}
-                      >
+                        <span style={{ fontWeight: "bold", color: "black" }}>
+                          {" "}
+                          Language :{" "}
+                        </span>{" "}
+                        {language}{" "}
+                      </p>
+                      <p>
                         {" "}
-                        Average Rating :{" "}
-                      </span>{" "}
-                      {averageRating}
-                    </p>
+                        <span
+                          style={{
+                            fontWeight: "bold",
+                            color: "black",
+                            marginLeft: "1rem",
+                          }}
+                        >
+                          {" "}
+                          Average Rating :{" "}
+                        </span>{" "}
+                        {averageRating}
+                      </p>
+                    </div> */}
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <p>
-                      {" "}
-                      <span style={{ fontWeight: "bold", color: "black" }}>
-                        {" "}
-                        Language :{" "}
-                      </span>{" "}
-                      {language}{" "}
-                    </p>
-
-                    <p>
-                      {" "}
-                      <span
-                        style={{
-                          fontWeight: "bold",
-                          color: "black",
-                          marginLeft: "1rem",
-                        }}
-                      >
-                        {" "}
-                        Sale Country :{" "}
-                      </span>{" "}
-                      {country}{" "}
-                    </p>
-                  </div>
-                </article>
+                </section>
               );
             })}
             <div className="custom-card">
-              <h2>Didn't found the book you love?</h2>
+              <h3 style={{ fontSize: "1.32rem", color: "white" }}>
+                Didn't found the book you love?
+              </h3>
               <br />
 
               <img
@@ -206,7 +193,7 @@ const BookDetails = () => {
                 srcset=""
               />
 
-              <h2 style={{ fontSize: "1.4rem" }}>
+              <h3 style={{ fontSize: "1.21rem", color: "white" }}>
                 Search for your favourite{" "}
                 <span style={{ fontWeight: "bold", color: "black" }}>
                   {" "}
@@ -218,7 +205,7 @@ const BookDetails = () => {
                   Author{" "}
                 </span>{" "}
                 in the search box!!
-              </h2>
+              </h3>
             </div>
           </section>
           <Footer></Footer>
