@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import axios from "axios";
-import logo from "./books-image.svg";
+import logo from "./img/books-image.svg";
 import Searchform from "./searchform";
 import Footer from "./footer";
 import "./style.css";
