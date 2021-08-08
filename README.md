@@ -9,7 +9,7 @@
 
 ### API
 
-- Google Books API
+- [Google Books API](https://developers.google.com/books/docs/v1/using)
 
 ### Installation
  1. Run this command in your terminal: ```npm install```
