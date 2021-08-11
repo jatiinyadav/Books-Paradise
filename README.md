@@ -32,6 +32,7 @@ This project includes [MIT License](/LICENSE).
 
 ### Connect with me
 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://jatiinyadav.github.io/)
 
 <div align="left">
 <a href="https://github.com/jatiinyadav" target="_blank">
