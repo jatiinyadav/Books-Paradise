@@ -4,7 +4,7 @@ import axios from "axios";
 import logo from "./img/books-image.svg";
 import Searchform from "./searchform";
 import Footer from "./footer";
-import "./style.css";
+import "../src/sass/style.css";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);

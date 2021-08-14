@@ -1,3 +1,8 @@
+$bgcolor: rgb(177, 174, 174);
+$textColor: #db4437;
+$cardBgColor: rgba(139, 134, 134, 0.842);
+$footerBgColor: rgb(53, 52, 52);
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +18,7 @@ body {
 }
 
 .books-bg {
-  background-color: rgb(177, 174, 174);
+  background-color: $bgcolor;
   border-radius: 1rem;
   padding: 1rem 1rem;
 }
@@ -24,12 +29,6 @@ img {
   border-radius: 0.5rem;
 }
 
-input[type="text"] {
-  width: 20em;
-  height: 3em;
-  padding: 10px 10px;
-}
-
 h1 {
   color: black;
   font-size: 1.5rem;
@@ -38,17 +37,23 @@ h1 {
 h2 {
   text-align: center;
   padding-top: 1rem;
-  color: #db4437;
+  color: $textColor;
 }
 
 h3 {
-  color: #db4437;
+  color: $textColor;
   text-align: center;
   padding-bottom: 1rem;
 }
 
 p {
   font-size: 0.8rem;
+}
+
+input[type="text"] {
+  width: 20em;
+  height: 3em;
+  padding: 10px 10px;
 }
 
 a {
@@ -58,7 +63,7 @@ a {
 }
 
 a:hover {
-  color: #db4437;
+  color: $textColor;
 }
 
 button {
@@ -87,7 +92,7 @@ ul {
 }
 
 .custom-card {
-  background-color: rgba(139, 134, 134, 0.842);
+  background-color: $cardBgColor;
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -104,7 +109,6 @@ footer {
   padding: 1rem;
   color: white;
   text-align: center;
-  background: rgb(53, 52, 52);
 }
 
 @media screen and (max-width: 1200px) {
