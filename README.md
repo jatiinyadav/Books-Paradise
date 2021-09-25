@@ -33,6 +33,7 @@ git clone https://github.com/jatiinyadav/Books-Library-using-ReactJs.git
 - Wait for the Issue to be assigned to you after which you can start working on it.
 - Fork the Repo and create a Branch for any Issue that you are working upon.
 - Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
+- Don't create a Issue or PR for very minor changes.
 
 ### Project Maintainer
 
