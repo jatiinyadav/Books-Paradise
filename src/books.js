@@ -182,7 +182,7 @@ const BookDetails = () => {
             })}
             <div className="custom-card">
               <h3 style={{ fontSize: "1.32rem", color: "white" }}>
-                Didn't found the book you love?
+                Didn't find the book you love?
               </h3>
               <br />
 
@@ -196,14 +196,13 @@ const BookDetails = () => {
               <h3 style={{ fontSize: "1.21rem", color: "white" }}>
                 Search for your favourite{" "}
                 <span style={{ fontWeight: "bold", color: "black" }}>
-                  {" "}
                   Genre{" "}
-                </span>{" "}
-                or{" "}
+                </span>
+                or {" "}
                 <span style={{ fontWeight: "bold", color: "black" }}>
-                  {" "}
+
                   Author{" "}
-                </span>{" "}
+                </span>
                 in the search box!!
               </h3>
             </div>
