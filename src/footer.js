@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer>
         <h4>
-          Build with ❤️ & ☕ by{" "}
+          &#60;&#47;&#62; with ❤️ & ☕ by{" "}
           <a
             style={{
               textDecoration: "underline",
