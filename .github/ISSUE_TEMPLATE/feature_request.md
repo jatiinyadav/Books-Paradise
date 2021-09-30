@@ -1,8 +1,9 @@
 ---
-name: 💥 Feature request
+name: "\U0001F4A5 Feature request"
 about: Suggest an idea for this project
 title: ''
-labels: feature 
+labels: ''
+assignees: ''
 
 ---
 
