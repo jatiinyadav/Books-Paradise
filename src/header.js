@@ -26,17 +26,25 @@ const Header = () => {
             alt="github-icon"
           />
         </a>
+        <strong>
         <h2
           className="heading-name"
           style={{
+            background: "#ffffffc7",
+            borderRadius: "1rem",
+            padding: "1rem",
+            paddingTop:0,
+            marginTop:20,
+            marginBottom:50,
+            color: "#333333",
             textAlign: "center",
-            color: "black",
             fontWeight: "bold",
-            fontFamily: "Michroma",
+            fontFamily: "Scheherazade New",
           }}
         >
-          A Book Library for all Book Lovers.
+          A Book Library for all Book Lovers
         </h2>
+        </strong>
       </div>
     </>
   );

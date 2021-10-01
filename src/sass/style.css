@@ -13,6 +13,13 @@ body {
   background-attachment: fixed;
 }
 
+
+.heading-name {
+  font-size: 52px;
+  width: 50rem;
+  margin: 0 auto;
+}
+
 .books-bg {
   background-color: #e0e0e0;
   border-radius: 1rem;
@@ -133,6 +140,15 @@ footer {
   }
 }
 
+@media screen and (max-width: 850px) {
+  .github-icon {
+    top: 110px;
+  }
+  .heading-name {
+    width: 48rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .container {
     -ms-grid-columns: 1fr 1fr;
@@ -141,6 +157,10 @@ footer {
   .container-articles {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  .heading-name {
+    font-size: 42px;
+    width: 35rem;
   }
 }
 
@@ -154,8 +174,21 @@ footer {
     font-size: 1rem;
   }
   .heading-name {
-    width: 90%;
+    width: auto;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .heading-name {
+    width: auto;
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .github-icon {
+    top: -50px;
   }
 }
 /*# sourceMappingURL=style.css.map */
