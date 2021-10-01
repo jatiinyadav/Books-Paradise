@@ -71,13 +71,11 @@ const BookDetails = () => {
                 <section key={id} className="books-bg">
                   <div>
                     <div>
-                      {imageLinks && (
-                        <img
-                          src={imageLinks.thumbnail}
-                          width="100px"
-                          alt="Book-cover"
-                        />
-                      )}
+                      <img
+                        src={imageLinks ? imageLinks.thumbnail : logo}
+                        width="100px"
+                        alt="Book-cover"
+                      />
                     </div>
                     <div>
                       {title && (
