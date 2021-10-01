@@ -73,7 +73,7 @@ const BookDetails = () => {
             textTransform: "capitalize",
           }}
         >
-          Couldn't find books about {term} ...
+          😞 Couldn't find books about {term}
         </h1>
       ) : (
         <section>
