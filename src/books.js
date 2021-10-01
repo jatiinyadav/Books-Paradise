@@ -56,6 +56,25 @@ const BookDetails = () => {
         >
           Fetching {term} books for you....
         </h1>
+      ) : !details ? (
+        <h1
+          className="loading-name"
+          style={{
+            background: "white",
+            borderRadius: "1rem",
+            color: "#DB4437",
+            padding: "1rem",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            fontSize: 33,
+            fontFamily: "Inria Serif",
+            transform: "translate(-50%,-50%)",
+            textTransform: "capitalize",
+          }}
+        >
+          Couldn't find books about {term} ...
+        </h1>
       ) : (
         <section>
           <section className="container" style={{ padding: "2rem 0rem" }}>
