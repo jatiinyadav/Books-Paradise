@@ -34,14 +34,11 @@ const Header = () => {
             borderRadius: "1rem",
             padding: "1rem",
             paddingTop:0,
-            marginLeft:175,
-            marginRight:175,
             marginTop:20,
             marginBottom:50,
             color: "#333333",
             textAlign: "center",
             fontWeight: "bold",
-            fontSize: 42,
             fontFamily: "Scheherazade New",
           }}
         >
