@@ -5,6 +5,7 @@ import logo from "./img/Book.svg";
 import Searchform from "./searchform";
 import Footer from "./footer";
 import "../src/sass/style.css";
+import defaultBook from "./img/defaultBook.png";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
@@ -94,13 +95,11 @@ const BookDetails = () => {
                 <section key={id} className="books-bg">
                   <div>
                     <div>
-                      {imageLinks && (
-                        <img
-                          src={imageLinks.thumbnail}
-                          width="100px"
-                          alt="Book-cover"
-                        />
-                      )}
+                      <img
+                        src={imageLinks ? imageLinks.thumbnail : defaultBook}
+                        width="100px"
+                        alt="Book-cover"
+                      />
                     </div>
                     <div>
                       {title && (
