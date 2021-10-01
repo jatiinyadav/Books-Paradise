@@ -28,7 +28,10 @@ const BookDetails = () => {
         style={{
           textTransform: "capitalize",
           color: "#DB4437",
-          fontFamily: "Michroma",
+          fontSize: 40,
+          marginTop: -60,
+          marginBottom: -21,
+          fontFamily: "Scheherazade New",
         }}
       >
         {term}
@@ -45,7 +48,8 @@ const BookDetails = () => {
             position: "absolute",
             top: "50%",
             left: "50%",
-            fontFamily: "Michroma",
+            fontSize: 33,
+            fontFamily: "Inria Serif",
             transform: "translate(-50%,-50%)",
             textTransform: "capitalize",
           }}
