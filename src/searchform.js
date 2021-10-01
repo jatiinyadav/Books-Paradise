@@ -5,6 +5,10 @@ const Searchform = ({ searchText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (text === "" || !text.trim()) {
+      alert("Please Enter the valid text");
+      return;
+    }
     searchText(text);
   };
 
