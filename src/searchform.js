@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 const Searchform = ({ searchText }) => {
   const [text, setText] = useState("");
+  const [showValidTextModal, setShowValidTextModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text === "" || !text.trim()) {
-      alert("Please Enter the valid text");
+      setShowValidTextModal(true);
       return;
     }
     searchText(text);
@@ -40,6 +41,17 @@ const Searchform = ({ searchText }) => {
           Search
         </button>
       </form>
+      <div
+        id="popup1"
+        class={showValidTextModal ? "overlay modal-active" : "overlay"}
+      >
+        <div class="popup">
+          <div class="close" onClick={() => setShowValidTextModal(false)}>
+            &times;
+          </div>
+          <h3 class="content">Please Enter the valid text</h3>
+        </div>
+      </div>
     </div>
   );
 };

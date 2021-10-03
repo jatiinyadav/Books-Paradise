@@ -2,17 +2,16 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
- Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: url("../img/Books-Bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
-
 
 .heading-name {
   font-size: 52px;
@@ -28,9 +27,9 @@ body {
 
 .books-bg:hover {
   -webkit-box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
   -webkit-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
 }
@@ -84,11 +83,11 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 ul {
@@ -122,7 +121,7 @@ ul {
   bottom: 0.5rem;
   right: 0.5rem;
   -webkit-animation: fadeIn 700ms ease-in-out 1s both;
-          animation: fadeIn 700ms ease-in-out 1s both;
+  animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
 }
 
@@ -136,7 +135,7 @@ footer {
 @media screen and (max-width: 1200px) {
   .container {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -152,11 +151,11 @@ footer {
 @media screen and (max-width: 768px) {
   .container {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .container-articles {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .heading-name {
     font-size: 42px;
@@ -164,10 +163,67 @@ footer {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  position: relative;
+  transition: all 0.52s ease-in-out;
+}
+
+.popup > h3 {
+  padding: 1em;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup > .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup > .close:hover {
+  color: #06d85f;
+}
+.popup > .content {
+  max-height: 30%;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 820px) {
+  .popup {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .loading-name {
     width: 90%;
