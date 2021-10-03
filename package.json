@@ -13,6 +13,7 @@
     "react-icons": "^4.2.0",
     "react-script-tag": "^1.1.2",
     "react-scripts": "4.0.3",
+    "sass": "^1.42.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
