@@ -6,6 +6,7 @@ import Searchform from "./searchform";
 import Footer from "./footer";
 import "../src/sass/style.css";
 import defaultBook from "./img/defaultBook.png";
+import Fade from "react-reveal/Fade";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
@@ -92,82 +93,83 @@ const BookDetails = () => {
               } = book;
 
               return (
-                <section key={id} className="books-bg">
-                  <div>
+                <Fade bottom>
+                  <section key={id} className="books-bg">
                     <div>
-                      <img
-                        src={imageLinks ? imageLinks.thumbnail : defaultBook}
-                        width="100px"
-                        alt="Book-cover"
-                      />
-                    </div>
-                    <div>
-                      {title && (
-                        <div>
-                          <h3 className="inline">{title}</h3>
-                        </div>
-                      )}
-                    </div>
+                      <div>
+                        <img
+                          src={imageLinks ? imageLinks.thumbnail : defaultBook}
+                          width="100px"
+                          alt="Book-cover"
+                        />
+                      </div>
+                      <div>
+                        {title && (
+                          <div>
+                            <h3 className="inline">{title}</h3>
+                          </div>
+                        )}
+                      </div>
 
-                    <div>
-                      {authors && (
-                        <h4 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Author:{" "}
-                          <span
+                      <div>
+                        {authors && (
+                          <h4 style={{ paddingBottom: "1rem", color: "black" }}>
+                            {" "}
+                            Author:{" "}
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                color: "#3B3B3B",
+                              }}
+                            >
+                              {" "}
+                              {authors}{" "}
+                            </span>
+                          </h4>
+                        )}
+                      </div>
+
+                      <div>
+                        {publisher && (
+                          <h5 style={{ paddingBottom: "1rem", color: "black" }}>
+                            {" "}
+                            Published by:{" "}
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                color: "#3B3B3B",
+                              }}
+                            >
+                              {" "}
+                              {publisher}{" "}
+                            </span>
+                          </h5>
+                        )}
+                      </div>
+
+                      <div>
+                        {previewLink && (
+                          <h5
                             style={{
                               fontWeight: "bold",
-                              color: "#3B3B3B",
+                              color: "black",
+                              paddingBottom: "1rem",
                             }}
                           >
-                            {" "}
-                            {authors}{" "}
-                          </span>
-                        </h4>
-                      )}
-                    </div>
+                            Read more :{" "}
+                            <a
+                              href={previewLink}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {" "}
+                              Google Books <BiLinkExternal></BiLinkExternal>{" "}
+                            </a>
+                          </h5>
+                        )}
+                      </div>
 
-                    <div>
-                      {publisher && (
-                        <h5 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Published by:{" "}
-                          <span
-                            style={{
-                              fontWeight: "bold",
-                              color: "#3B3B3B",
-                            }}
-                          >
-                            {" "}
-                            {publisher}{" "}
-                          </span>
-                        </h5>
-                      )}
-                    </div>
-
-                    <div>
-                      {previewLink && (
-                        <h5
-                          style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            paddingBottom: "1rem",
-                          }}
-                        >
-                          Read more :{" "}
-                          <a
-                            href={previewLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {" "}
-                            Google Books <BiLinkExternal></BiLinkExternal>{" "}
-                          </a>
-                        </h5>
-                      )}
-                    </div>
-
-                    {/* <div
+                      {/* <div
                       style={{
                         display: "flex",
                         justifyContent: "center",
@@ -198,8 +200,9 @@ const BookDetails = () => {
                         {averageRating}
                       </p>
                     </div> */}
-                  </div>
-                </section>
+                    </div>
+                  </section>
+                </Fade>
               );
             })}
             <div className="custom-card">
@@ -220,9 +223,8 @@ const BookDetails = () => {
                 <span style={{ fontWeight: "bold", color: "black" }}>
                   Genre{" "}
                 </span>
-                or {" "}
+                or{" "}
                 <span style={{ fontWeight: "bold", color: "black" }}>
-
                   Author{" "}
                 </span>
                 in the search box!!

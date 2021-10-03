@@ -25,14 +25,13 @@ const Searchform = ({ searchText }) => {
       >
         <input
           type="text"
-          placeholder="Search Chetan Bhagat, Vikram Seth etc.."
+          placeholder="Search books and authors..."
           onChange={(e) => setText(e.target.value)}
         />
         <button
           style={{
             marginLeft: "1rem",
-            padding: "0.4rem",
-            borderRadius: "0.2rem",
+
             cursor: "pointer",
           }}
           type="submit"

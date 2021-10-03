@@ -2,17 +2,16 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
- Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: url("../img/Books-Bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
-
 
 .heading-name {
   font-size: 52px;
@@ -30,9 +29,9 @@ body {
 
 .books-bg:hover {
   -webkit-box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 img {
@@ -64,8 +63,12 @@ p {
 
 input[type="text"] {
   width: 20em;
-  height: 3em;
+  height: 3rem;
   padding: 10px 10px;
+  border-radius: 50px;
+  outline: none;
+  border: 1px solid brown;
+  font-size: 1rem;
 }
 
 a {
@@ -84,11 +87,24 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50px;
+  height: 3rem;
+  padding: 1rem;
+  border: 1px solid brown;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 530;
+  background-color: #fff;
+}
+
+button:hover {
+  background-color: rgb(207, 203, 203);
+  color: #3b3b3b;
 }
 
 ul {
@@ -122,7 +138,7 @@ ul {
   bottom: 0.5rem;
   right: 0.5rem;
   -webkit-animation: fadeIn 700ms ease-in-out 1s both;
-          animation: fadeIn 700ms ease-in-out 1s both;
+  animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
 }
 
@@ -136,7 +152,7 @@ footer {
 @media screen and (max-width: 1200px) {
   .container {
     -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -152,11 +168,11 @@ footer {
 @media screen and (max-width: 768px) {
   .container {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .container-articles {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .heading-name {
     font-size: 42px;
@@ -167,7 +183,7 @@ footer {
 @media screen and (max-width: 600px) {
   .container {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .loading-name {
     width: 90%;
