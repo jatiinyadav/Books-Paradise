@@ -38,6 +38,7 @@ img {
   height: 12rem;
   width: 8rem;
   border-radius: 0.5rem;
+  margin-right: 2rem;
 }
 
 h1 {
@@ -119,11 +120,12 @@ ul {
   max-width: 120rem;
   height: 100%;
   margin: 0 auto;
+  padding: 2rem 1rem;
   position: relative;
   display: -ms-grid;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
 }
 
@@ -147,6 +149,22 @@ footer {
   padding: 1rem;
   color: white;
   text-align: center;
+}
+
+/* genre css */
+.genre {
+  float: right;
+  background: rgb(214, 92, 44);
+  padding: 0px;
+  padding-left: 10px;
+  margin-right: -10px;
+  margin-top: -90px;
+  margin-left: 2rem;
+}
+.genre > i {
+  font-size: 1.2rem;
+  padding: 0.7rem 0.5rem;
+  color: rgb(247, 241, 241);
 }
 
 @media screen and (max-width: 1200px) {

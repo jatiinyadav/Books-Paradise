@@ -15,8 +15,8 @@ const Header = () => {
             style={{
               position: "absolute",
               right: "10px",
-              height: "2rem",
-              width: "2rem",
+              height: "2.5rem",
+              width: "2.5rem",
               padding: "3px",
               marginTop: "1.25rem",
               background: "white",
@@ -27,23 +27,23 @@ const Header = () => {
           />
         </a>
         <strong>
-        <h2
-          className="heading-name"
-          style={{
-            background: "#ffffffc7",
-            borderRadius: "1rem",
-            padding: "1rem",
-            paddingTop:0,
-            marginTop:20,
-            marginBottom:50,
-            color: "#333333",
-            textAlign: "center",
-            fontWeight: "bold",
-            fontFamily: "Scheherazade New",
-          }}
-        >
-          A Book Library for all Book Lovers
-        </h2>
+          <h2
+            className="heading-name"
+            style={{
+              background: "#ffffffc7",
+              borderRadius: "1rem",
+              padding: "1rem",
+              paddingTop: 0,
+              marginTop: 20,
+              marginBottom: 50,
+              color: "#333333",
+              textAlign: "center",
+              fontWeight: "bold",
+              fontFamily: "Scheherazade New",
+            }}
+          >
+            A Book Library for all Book Lovers
+          </h2>
         </strong>
       </div>
     </>

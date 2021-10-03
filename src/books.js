@@ -79,7 +79,7 @@ const BookDetails = () => {
         </h1>
       ) : (
         <section>
-          <section className="container" style={{ padding: "2rem 0rem" }}>
+          <section className="container">
             {details.map((book) => {
               const {
                 id,
@@ -87,6 +87,7 @@ const BookDetails = () => {
                   title,
                   authors,
                   publisher,
+                  categories,
                   previewLink,
                   imageLinks,
                 },
@@ -109,11 +110,18 @@ const BookDetails = () => {
                             <h3 className="inline">{title}</h3>
                           </div>
                         )}
+                        {categories ? (
+                          <span className="genre">
+                            <i className="fas fa-book">&nbsp;{categories}</i>
+                          </span>
+                        ) : (
+                          ""
+                        )}
                       </div>
 
                       <div>
                         {authors && (
-                          <h4 style={{ paddingBottom: "1rem", color: "black" }}>
+                          <h3 style={{ paddingBottom: "1rem", color: "black" }}>
                             {" "}
                             Author:{" "}
                             <span
@@ -125,13 +133,13 @@ const BookDetails = () => {
                               {" "}
                               {authors}{" "}
                             </span>
-                          </h4>
+                          </h3>
                         )}
                       </div>
 
                       <div>
                         {publisher && (
-                          <h5 style={{ paddingBottom: "1rem", color: "black" }}>
+                          <h4 style={{ paddingBottom: "1rem", color: "black" }}>
                             {" "}
                             Published by:{" "}
                             <span
@@ -143,13 +151,13 @@ const BookDetails = () => {
                               {" "}
                               {publisher}{" "}
                             </span>
-                          </h5>
+                          </h4>
                         )}
                       </div>
 
                       <div>
                         {previewLink && (
-                          <h5
+                          <h4
                             style={{
                               fontWeight: "bold",
                               color: "black",
@@ -165,7 +173,7 @@ const BookDetails = () => {
                               {" "}
                               Google Books <BiLinkExternal></BiLinkExternal>{" "}
                             </a>
-                          </h5>
+                          </h4>
                         )}
                       </div>
 
@@ -205,31 +213,28 @@ const BookDetails = () => {
                 </Fade>
               );
             })}
-            <div className="custom-card">
-              <h3 style={{ fontSize: "1.32rem", color: "white" }}>
-                Didn't find the book you love?
-              </h3>
-              <br />
+            <Fade bottom>
+              <div className="custom-card">
+                <h3 style={{ fontSize: "1.32rem", color: "white" }}>
+                  Didn't find the book you love?
+                </h3>
+                <br />
 
-              <img
-                style={{ width: "100%" }}
-                src={logo}
-                alt="Books-Image"
-                srcset=""
-              />
+                <img style={{ width: "100%" }} src={logo} alt="books-pic" />
 
-              <h3 style={{ fontSize: "1.21rem", color: "white" }}>
-                Search for your favourite{" "}
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Genre{" "}
-                </span>
-                or{" "}
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Author{" "}
-                </span>
-                in the search box!!
-              </h3>
-            </div>
+                <h3 style={{ fontSize: "1.21rem", color: "white" }}>
+                  Search for your favourite{" "}
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    Genre{" "}
+                  </span>
+                  or{" "}
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    Author{" "}
+                  </span>
+                  in the search box!!
+                </h3>
+              </div>
+            </Fade>
           </section>
           <Footer></Footer>
         </section>
