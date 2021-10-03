@@ -17,7 +17,6 @@ body {
   background-attachment: fixed;
 }
 
-
 .heading-name {
   font-size: 52px;
   width: 50rem;
@@ -150,6 +149,51 @@ footer {
   .heading-name {
     font-size: 42px;
     width: 35rem;
+  }
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  position: relative;
+  transition: all 0.52s ease-in-out;
+}
+
+.popup > h3 {
+  padding: 1em;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup > .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup > .close:hover {
+  color: #06d85f;
+  cursor: pointer;
+}
+.popup > .content {
+  max-height: 30%;
+  word-break: break-word;
+}
+
+@media screen and (max-width: 820px) {
+  .popup {
+    width: 70%;
   }
 }
 
