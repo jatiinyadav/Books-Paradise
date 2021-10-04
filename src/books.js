@@ -111,7 +111,13 @@ const BookDetails = () => {
                           </div>
                         )}
                         {categories ? (
-                          <span className="genre">
+                          <span
+                            className="genre"
+                            style={{
+                              backgroundColor: "yellow",
+                              padding: ".4rem",
+                            }}
+                          >
                             <i className="fas fa-book">&nbsp;{categories}</i>
                           </span>
                         ) : (
@@ -121,7 +127,13 @@ const BookDetails = () => {
 
                       <div>
                         {authors && (
-                          <h3 style={{ paddingBottom: "1rem", color: "black" }}>
+                          <h3
+                            style={{
+                              marginTop: ".7rem",
+                              paddingBottom: ".8rem",
+                              color: "black",
+                            }}
+                          >
                             {" "}
                             Author:{" "}
                             <span
