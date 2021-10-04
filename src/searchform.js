@@ -26,7 +26,7 @@ const Searchform = ({ searchText }) => {
       >
         <input
           type="text"
-          placeholder="Search Chetan Bhagat, Vikram Seth etc.."
+          placeholder="Search books and authors..."
           onChange={(e) => setText(e.target.value)}
         />
         <button

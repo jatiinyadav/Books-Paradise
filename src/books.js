@@ -6,6 +6,7 @@ import Searchform from "./searchform";
 import Footer from "./footer";
 import "../src/sass/style.css";
 import defaultBook from "./img/defaultBook.png";
+import Fade from "react-reveal/Fade";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
@@ -78,7 +79,7 @@ const BookDetails = () => {
         </h1>
       ) : (
         <section>
-          <section className="container" style={{ padding: "2rem 0rem" }}>
+          <section className="container" style={{ padding: "1.5rem 0rem" }}>
             {details.map((book) => {
               const {
                 id,
@@ -88,86 +89,108 @@ const BookDetails = () => {
                   publisher,
                   previewLink,
                   imageLinks,
+                  categories,
                 },
               } = book;
 
               return (
-                <section key={id} className="books-bg">
-                  <div>
+                <Fade bottom>
+                  <section key={id} className="books-bg">
                     <div>
-                      <img
-                        src={imageLinks ? imageLinks.thumbnail : defaultBook}
-                        width="100px"
-                        alt="Book-cover"
-                      />
-                    </div>
-                    <div>
-                      {title && (
-                        <div>
-                          <h3 className="inline">{title}</h3>
-                        </div>
-                      )}
-                    </div>
-
-                    <div>
-                      {authors && (
-                        <h4 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Author:{" "}
+                      <div>
+                        <img
+                          src={imageLinks ? imageLinks.thumbnail : defaultBook}
+                          width="100px"
+                          alt="Book-cover"
+                        />
+                      </div>
+                      <div>
+                        {title && (
+                          <div>
+                            <h3 className="inline">{title}</h3>
+                          </div>
+                        )}
+                        {categories ? (
                           <span
+                            className="genre"
                             style={{
-                              fontWeight: "bold",
-                              color: "#3B3B3B",
+                              backgroundColor: "yellow",
+                              color: "#3F0713",
+                              padding: ".7rem",
+                            }}
+                          >
+                            <i className="fas fa-book">&nbsp;{categories}</i>
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+
+                      <div>
+                        {authors && (
+                          <h3
+                            style={{
+                              marginTop: "1rem",
+                              paddingBottom: "1rem",
+                              color: "black",
                             }}
                           >
                             {" "}
-                            {authors}{" "}
-                          </span>
-                        </h4>
-                      )}
-                    </div>
+                            Author:{" "}
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                color: "#3B3B3B",
+                              }}
+                            >
+                              {" "}
+                              {authors}{" "}
+                            </span>
+                          </h3>
+                        )}
+                      </div>
 
-                    <div>
-                      {publisher && (
-                        <h5 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Published by:{" "}
-                          <span
+                      <div>
+                        {publisher && (
+                          <h4 style={{ paddingBottom: "1rem", color: "black" }}>
+                            {" "}
+                            Published by:{" "}
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                color: "#3B3B3B",
+                              }}
+                            >
+                              {" "}
+                              {publisher}{" "}
+                            </span>
+                          </h4>
+                        )}
+                      </div>
+
+                      <div>
+                        {previewLink && (
+                          <h4
                             style={{
                               fontWeight: "bold",
-                              color: "#3B3B3B",
+                              color: "black",
+                              paddingBottom: "1rem",
                             }}
                           >
-                            {" "}
-                            {publisher}{" "}
-                          </span>
-                        </h5>
-                      )}
-                    </div>
+                            Read more :{" "}
+                            <a
+                              href={previewLink}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {" "}
+                              Google Books <BiLinkExternal></BiLinkExternal>{" "}
+                            </a>
+                          </h4>
+                        )}
+                      </div>
 
-                    <div>
-                      {previewLink && (
-                        <h5
-                          style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            paddingBottom: "1rem",
-                          }}
-                        >
-                          Read more :{" "}
-                          <a
-                            href={previewLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {" "}
-                            Google Books <BiLinkExternal></BiLinkExternal>{" "}
-                          </a>
-                        </h5>
-                      )}
-                    </div>
-
-                    {/* <div
+                      {/* <div
                       style={{
                         display: "flex",
                         justifyContent: "center",
@@ -198,36 +221,38 @@ const BookDetails = () => {
                         {averageRating}
                       </p>
                     </div> */}
-                  </div>
-                </section>
+                    </div>
+                  </section>
+                </Fade>
               );
             })}
-            <div className="custom-card">
-              <h3 style={{ fontSize: "1.32rem", color: "white" }}>
-                Didn't find the book you love?
-              </h3>
-              <br />
+            <Fade bottom>
+              <div className="custom-card">
+                <h3 style={{ fontSize: "1.32rem", color: "white" }}>
+                  Didn't find the book you love?
+                </h3>
+                <br />
 
-              <img
-                style={{ width: "100%" }}
-                src={logo}
-                alt="Books-Image"
-                srcset=""
-              />
+                <img
+                  style={{ width: "100%" }}
+                  src={logo}
+                  alt="Books-pic"
+                  srcset=""
+                />
 
-              <h3 style={{ fontSize: "1.21rem", color: "white" }}>
-                Search for your favourite{" "}
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Genre{" "}
-                </span>
-                or {" "}
-                <span style={{ fontWeight: "bold", color: "black" }}>
-
-                  Author{" "}
-                </span>
-                in the search box!!
-              </h3>
-            </div>
+                <h3 style={{ fontSize: "1.21rem", color: "white" }}>
+                  Search for your favourite{" "}
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    Genre{" "}
+                  </span>
+                  or{" "}
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    Author{" "}
+                  </span>
+                  in the search box!!
+                </h3>
+              </div>
+            </Fade>
           </section>
           <Footer></Footer>
         </section>
