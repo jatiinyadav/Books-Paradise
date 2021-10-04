@@ -30,9 +30,16 @@ const Searchform = ({ searchText }) => {
         />
         <button
           style={{
-            marginLeft: "1rem",
-
+            borderRadius: "50px",
+            height: "3rem",
+            padding: "1rem",
+            border: "1px solid brown",
+            outline: "none",
+            fontSize: "1rem",
+            fontWeight: "530",
+            backgroundColor: "#fff",
             cursor: "pointer",
+            marginLeft: "1rem",
           }}
           type="submit"
         >

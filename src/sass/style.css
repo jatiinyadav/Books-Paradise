@@ -93,19 +93,6 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-radius: 50px;
-  height: 3rem;
-  padding: 1rem;
-  border: 1px solid brown;
-  outline: none;
-  font-size: 1rem;
-  font-weight: 530;
-  background-color: #fff;
-}
-
-button:hover {
-  background-color: rgb(207, 203, 203);
-  color: #3b3b3b;
 }
 
 ul {
