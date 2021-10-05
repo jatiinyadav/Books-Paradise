@@ -20,7 +20,7 @@ const BookDetails = () => {
       `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=11`
     );
     setDetails(resources.data.items);
-    setIsLoading(false);
+    // setIsLoading(false);
   }, [term]);
 
   return (
