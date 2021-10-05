@@ -117,6 +117,54 @@ ul {
   cursor: pointer;
 }
 
+.loading-card {
+  margin: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background-color: #e0e0e0;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  .image {
+    height: 12rem;
+    width: 8rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+  }
+
+  .content {
+    padding: 20px 30px;
+  }
+  .image,
+  h2,
+  p {
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    margin: .5rem auto;
+    animation: 1.5s shine linear infinite;
+  }
+
+
+  h2 {
+    height: 30px;
+  }
+
+  p {
+    height: 20px;
+    width: 80%;
+    margin: .4rem auto;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
 footer {
   background: $footerBgColor;
   padding: 1rem;
@@ -151,7 +199,18 @@ footer {
     width: 35rem;
   }
 }
-
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
 .modal-active {
   visibility: visible;
   opacity: 1;
