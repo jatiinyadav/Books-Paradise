@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BiLinkExternal } from "react-icons/bi";
 import axios from "axios";
 import logo from "./img/Book.svg";
 import Searchform from "./searchform";
 import Footer from "./footer";
+import Book from './book';
+import LoadingCard from "./loadingCard";
 import "../src/sass/style.css";
-import defaultBook from "./img/defaultBook.png";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
@@ -39,24 +39,12 @@ const BookDetails = () => {
       </h2>
       <Searchform searchText={(text) => setTerm(text)}></Searchform>
       {isLoading ? (
-        <h1
-          className="loading-name"
-          style={{
-            background: "white",
-            borderRadius: "1rem",
-            color: "#DB4437",
-            padding: "1rem",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            fontSize: 33,
-            fontFamily: "Inria Serif",
-            transform: "translate(-50%,-50%)",
-            textTransform: "capitalize",
-          }}
-        >
-          Fetching {term} books for you....
-        </h1>
+          <section className="container" style={{padding: "2rem 0rem"}}>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
+          </section>
       ) : !details ? (
         <h1
           className="loading-name"
@@ -79,129 +67,7 @@ const BookDetails = () => {
       ) : (
         <section>
           <section className="container" style={{ padding: "2rem 0rem" }}>
-            {details.map((book) => {
-              const {
-                id,
-                volumeInfo: {
-                  title,
-                  authors,
-                  publisher,
-                  previewLink,
-                  imageLinks,
-                },
-              } = book;
-
-              return (
-                <section key={id} className="books-bg">
-                  <div>
-                    <div>
-                      <img
-                        src={imageLinks ? imageLinks.thumbnail : defaultBook}
-                        width="100px"
-                        alt="Book-cover"
-                      />
-                    </div>
-                    <div>
-                      {title && (
-                        <div>
-                          <h3 className="inline">{title}</h3>
-                        </div>
-                      )}
-                    </div>
-
-                    <div>
-                      {authors && (
-                        <h4 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Author:{" "}
-                          <span
-                            style={{
-                              fontWeight: "bold",
-                              color: "#3B3B3B",
-                            }}
-                          >
-                            {" "}
-                            {authors}{" "}
-                          </span>
-                        </h4>
-                      )}
-                    </div>
-
-                    <div>
-                      {publisher && (
-                        <h5 style={{ paddingBottom: "1rem", color: "black" }}>
-                          {" "}
-                          Published by:{" "}
-                          <span
-                            style={{
-                              fontWeight: "bold",
-                              color: "#3B3B3B",
-                            }}
-                          >
-                            {" "}
-                            {publisher}{" "}
-                          </span>
-                        </h5>
-                      )}
-                    </div>
-
-                    <div>
-                      {previewLink && (
-                        <h5
-                          style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            paddingBottom: "1rem",
-                          }}
-                        >
-                          Read more :{" "}
-                          <a
-                            href={previewLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {" "}
-                            Google Books <BiLinkExternal></BiLinkExternal>{" "}
-                          </a>
-                        </h5>
-                      )}
-                    </div>
-
-                    {/* <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        paddingTop: "1rem",
-                      }}
-                    > {language && }
-                      <p>
-                        {" "}
-                        <span style={{ fontWeight: "bold", color: "black" }}>
-                          {" "}
-                          Language :{" "}
-                        </span>{" "}
-                        {language}{" "}
-                      </p>
-                      <p>
-                        {" "}
-                        <span
-                          style={{
-                            fontWeight: "bold",
-                            color: "black",
-                            marginLeft: "1rem",
-                          }}
-                        >
-                          {" "}
-                          Average Rating :{" "}
-                        </span>{" "}
-                        {averageRating}
-                      </p>
-                    </div> */}
-                  </div>
-                </section>
-              );
-            })}
+            {details.map((book) => <Book {...book} />)}
             <div className="custom-card">
               <h3 style={{ fontSize: "1.32rem", color: "white" }}>
                 Didn't find the book you love?
