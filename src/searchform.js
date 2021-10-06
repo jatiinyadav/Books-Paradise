@@ -32,7 +32,8 @@ const Searchform = ({ searchText }) => {
         <button
           style={{
             marginLeft: "1rem",
-            padding: "0.4rem",
+            transition: "all 0.3s ease 0s",
+            padding: "0.6rem",
             borderRadius: "0.2rem",
             cursor: "pointer",
           }}

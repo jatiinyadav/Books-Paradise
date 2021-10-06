@@ -30,16 +30,17 @@ const Header = () => {
         <h2
           className="heading-name"
           style={{
-            background: "#ffffffc7",
-            borderRadius: "1rem",
+            background: "none",
+            // borderRadius: "1rem",
             padding: "1rem",
             paddingTop:0,
             marginTop:20,
             marginBottom:50,
-            color: "#333333",
+            color: "#333",
             textAlign: "center",
-            fontWeight: "bold",
+            // fontWeight: "bold", //No need of bold because headings are itself bold
             fontFamily: "Scheherazade New",
+            textShadow: "2px 2px 3px #b0b0b0"
           }}
         >
           A Book Library for all Book Lovers
