@@ -48,6 +48,10 @@ git clone https://github.com/jatiinyadav/Books-Library-using-ReactJs.git
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://jatiinyadav.github.io/)
 
+## Code of Conduct
+
+You can find Code of Conduct [here](/CODE_OF_CONDUCT.md).
+
 ### License
 
 This project includes [MIT License](/LICENSE).
