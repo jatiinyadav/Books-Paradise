@@ -1,5 +1,5 @@
 import React from 'react'
-import './sass/style.css'
+import './sass/style.scss'
 const loadingCard=()=> {
     return (
         <div class="loading-card">

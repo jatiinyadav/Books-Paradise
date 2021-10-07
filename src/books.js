@@ -5,7 +5,7 @@ import Searchform from "./searchform";
 import Footer from "./footer";
 import Book from './book';
 import LoadingCard from "./loadingCard";
-import "../src/sass/style.css";
+import "../src/sass/style.scss";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import defaultBook from "./img/defaultBook.png";
-import "../src/sass/style.css";
+import "../src/sass/style.scss";
 
 const Book = ({id,volumeInfo}) => {
     const 
