@@ -24,12 +24,10 @@ const BookDetails = () => {
   }, [term]);
 
   const loadMore = async () => {
-    setIsLoading(true);
     const resources = await axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=10&startIndex=${details.length}`
+      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=8&startIndex=${details.length}`
     );
     setDetails(oldDetails => [...oldDetails, ...resources.data.items]);
-    setIsLoading(false);
   }
 
   return (
