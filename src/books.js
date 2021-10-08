@@ -23,6 +23,13 @@ const BookDetails = () => {
     setIsLoading(false);
   }, [term]);
 
+  const loadMore = async () => {
+    const resources = await axios.get(
+      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=8&startIndex=${details.length}`
+    );
+    setDetails(oldDetails => [...oldDetails, ...resources.data.items]);
+  }
+
   return (
     <>
       <h2
@@ -67,7 +74,7 @@ const BookDetails = () => {
       ) : (
         <section>
           <section className="container" style={{ padding: "2rem 0rem" }}>
-            {details.map((book) => <Book {...book} />)}
+            {details.map((book, index) => <Book {...book} key={index}/>)}
             <div className="custom-card">
               <h3 style={{ fontSize: "1.32rem", color: "white" }}>
                 Didn't find the book you love?
@@ -95,6 +102,7 @@ const BookDetails = () => {
               </h3>
             </div>
           </section>
+          <button style={{width: '250px', height: '70px', margin: 'auto', marginBottom: '50px'}} onClick={()=>loadMore()}>Load More!</button>
           <Footer></Footer>
         </section>
       )}
