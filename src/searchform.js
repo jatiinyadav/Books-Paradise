@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 const Searchform = ({ searchText }) => {
   const [text, setText] = useState("");
@@ -12,6 +12,16 @@ const Searchform = ({ searchText }) => {
     }
     searchText(text);
   };
+
+  const onChangevalue = (e) => {
+    e.preventDefault();
+    setText(e.target.value)
+    searchText(e.target.value);
+    if(e.target.value === ""){
+      setText("Ruskin Bond")
+      searchText("Ruskin Bond");
+    }
+  }
 
   return (
     <div>
@@ -27,7 +37,7 @@ const Searchform = ({ searchText }) => {
         <input
           type="text"
           placeholder="Search Chetan Bhagat, Vikram Seth etc.."
-          onChange={(e) => setText(e.target.value)}
+          onChange={onChangevalue}
         />
         <button
           style={{

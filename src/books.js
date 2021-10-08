@@ -102,7 +102,9 @@ const BookDetails = () => {
               </h3>
             </div>
           </section>
-          <button style={{width: '250px', height: '70px', margin: 'auto', marginBottom: '50px'}} onClick={()=>loadMore()}>Load More!</button>
+          <div className="load-more">
+            <button onClick={()=>loadMore()}>Load More!</button>
+          </div>
           <Footer></Footer>
         </section>
       )}
