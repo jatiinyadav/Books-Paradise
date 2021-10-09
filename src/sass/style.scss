@@ -160,6 +160,42 @@ ul {
   }
 }
 
+.load-more{
+  width: max-content;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 50px;
+
+  button {
+    padding: .7rem 1.4rem .7rem 1.4rem;
+    background-color: white;
+    border: 1px solid $footerBgColor;
+    color: black;
+    border-radius: .4rem;
+    cursor: pointer;
+
+    &:hover{
+      background-color: $footerBgColor;
+      color: white;
+      animation: hover 1.3s ease-in-out;
+      transition-delay: 1s;
+    }
+
+    @keyframes hover {
+      from{
+        background-color: white;
+        color: black;
+      }
+      to{
+        background-color: $footerBgColor;
+        color: white;
+      }
+    }
+  }
+}
+
 @keyframes shine {
   to {
     background-position-x: -200%;
