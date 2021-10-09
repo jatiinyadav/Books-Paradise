@@ -14,13 +14,16 @@ const BookDetails = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(async () => {
-    setIsLoading(true);
-    const resources = await axios.get(
-      `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=11`
-    );
-    setDetails(resources.data.items);
-    setIsLoading(false);
+  useEffect(() => {
+    const fetchDetails = async () => {
+      setIsLoading(true);
+      const resources = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=11`
+      );
+      setDetails(resources.data.items);
+      setIsLoading(false);
+    }
+    fetchDetails();
   }, [term]);
 
   const loadMore = async () => {
@@ -84,7 +87,7 @@ const BookDetails = () => {
               <img
                 style={{ width: "100%" }}
                 src={logo}
-                alt="Books-Image"
+                alt="A man reading a book"
                 srcset=""
               />
 
