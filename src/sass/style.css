@@ -180,6 +180,7 @@ ul {
   place-items: center;
   width: 100%;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
 .load-more button {
@@ -193,8 +194,33 @@ ul {
 
 .load-more button:hover {
   background-color: #353434;
-  border: none;
   color: white;
+  -webkit-animation: hover 1.3s ease-in-out;
+          animation: hover 1.3s ease-in-out;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+@-webkit-keyframes hover {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: #353434;
+    color: white;
+  }
+}
+
+@keyframes hover {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: #353434;
+    color: white;
+  }
 }
 
 @-webkit-keyframes shine {
