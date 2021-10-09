@@ -1,18 +1,25 @@
 import React from "react";
-import "./sass/ribbon.css"
+import "./sass/ribbon.css";
+import github_logo from "./img/github-logo.png";
 const Header = () => {
   return (
     <>
-      <div class="ribbon">
-        <a
-          className="github-icon"
-          href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span>GITHUB</span>
-        </a>
-      </div>
+      {/** GitHub Logo */}
+      <a
+        href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="topRightTriangle">
+          <img
+            src={github_logo}
+            alt="github-icon"
+          />
+        </div>
+      </a>
+
+
+
       <div>
         <strong>
           <h2

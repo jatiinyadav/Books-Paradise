@@ -1,12 +1,22 @@
-.ribbon {
+/* .ribbon {
+    background-color: #FFF;
     position: absolute;
-    left: -5px;
-    top: -5px;
+    right: -75px;
+    top: -75px;
     z-index: 1;
     overflow: hidden;
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
     text-align: right;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    display: flex;
+    justify-content:center;
+    align-items: baseline;
+}
+
+.ribbon img{
+    width: 50%;
 }
 
 .ribbon span {
@@ -16,10 +26,10 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 20px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+    
     width: 100px;
-    display: block;
+    display: flex;
+    justify-content:center;
     background: #79A70A;
     background: linear-gradient(#801111 0%, #CC2316 100%);
     box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
@@ -50,4 +60,67 @@
     border-right: 3px solid #CC2316;
     border-bottom: 3px solid transparent;
     border-top: 3px solid #CC2316;
+} */
+
+/* .ribbon {
+    top: -40px;
+    right: -50px;
+    display: flex;
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    background-color: #FFF;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    align-items: center;
+    justify-content: center;
+} */
+
+.topRightTriangle {
+}
+
+.topRightTriangle::before, .topRightTriangle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.topRightTriangle::before {
+    /* border-width: 3em; */
+    border-right-color: #ccc;
+    border-top-color: #ccc;
+}
+
+.topRightTriangle::after {
+    border-width: 2.5em;
+    border-right-color: #000;
+    border-top-color: #000;
+}
+
+.topRightTriangle img {
+    z-index: 100;
+    background-color: #FFF;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 1rem;
+    width: 1rem;
+    background: "red";
+    cursor: pointer;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .topRightTriangle::after {
+        border-width: 2em;
+    }
+    /* .topRightTriangle img {
+        height: 2.5em;
+    width: 2.5em;
+    } */
 }
