@@ -48,6 +48,12 @@ git clone https://github.com/jatiinyadav/Books-Library-using-ReactJs.git
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://jatiinyadav.github.io/)
 
+## Our valuable Contributor :
+
+<a href="https://github.com/jatiinyadav/Books-Library-using-ReactJs/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=jatiinyadav/Books-Library-using-ReactJs" />
+</a>
+
 ## Code of Conduct
 
 You can find Code of Conduct [here](/CODE_OF_CONDUCT.md).
@@ -55,11 +61,3 @@ You can find Code of Conduct [here](/CODE_OF_CONDUCT.md).
 ### License
 
 This project includes [MIT License](/LICENSE).
-
-
-## Our valuable Contributor :
-
-<a href="https://github.com/jatiinyadav/Books-Library-using-ReactJs/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=jatiinyadav/Books-Library-using-ReactJs" />
-</a>
-
