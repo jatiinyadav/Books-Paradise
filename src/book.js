@@ -4,7 +4,7 @@ import defaultBook from "./img/defaultBook.png";
 import "../src/sass/style.css";
 
 const Book = ({id,volumeInfo}) => {
-    const 
+    let 
         {
           title,
           authors,
@@ -14,6 +14,12 @@ const Book = ({id,volumeInfo}) => {
         }
     = volumeInfo;
 
+    //setting up default values for volume info data
+      title = title || "Title is not available";
+      authors = authors || "Author(s) name not available";
+      publisher = publisher || "Publisher company not available";
+      previewLink = previewLink || "https://books.google.co.in/";
+      
       return (
         <section key={id} className="loading-card">
           <div>
