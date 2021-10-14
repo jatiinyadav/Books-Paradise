@@ -5,6 +5,17 @@ import "../src/sass/style.css";
 import { motion } from "framer-motion";
 
 const Book = ({ id, volumeInfo }) => {
+  const imageVariants = {
+    hover: {
+      scale: 1.7,
+      boxShadow: "0px 0px 8px #000",
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        delay: 0.15,
+      },
+    },
+  };
   let { title, authors, publisher, previewLink, imageLinks } = volumeInfo;
 
   //setting up default values for volume info data
@@ -21,10 +32,8 @@ const Book = ({ id, volumeInfo }) => {
             src={imageLinks ? imageLinks.thumbnail : defaultBook}
             width="100px"
             alt="Book-cover"
-            whileHover={{
-              scale: 1.7,
-              boxShadow: "0px 0px 8px #000",
-            }}
+            variants={imageVariants}
+            whileHover="hover"
           />
         </div>
         <div>
