@@ -11,31 +11,42 @@ const Header = () => {
       transition: { type: "spring", stiffness: 120 },
     },
   };
+  const iconVariants = {
+    hidden: {
+      y: "100vh",
+    },
+    visible: {
+      y: 0,
+      transition: { ease: "easeInOut", stiffness: 120 },
+    },
+  };
   return (
     <>
       <div>
-        <a
-          className="github-icon"
-          href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
+        <motion.div variants={iconVariants} initial="hidden" animate="visible">
+          <a
             className="github-icon"
-            style={{
-              position: "absolute",
-              right: "10px",
-              height: "2rem",
-              width: "2rem",
-              padding: "3px",
-              marginTop: "1.25rem",
-              background: "white",
-              cursor: "pointer",
-            }}
-            src="https://img.icons8.com/material-sharp/30/000000/github.png"
-            alt="github-icon"
-          />
-        </a>
+            href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="github-icon"
+              style={{
+                position: "absolute",
+                right: "10px",
+                height: "2rem",
+                width: "2rem",
+                padding: "3px",
+                marginTop: "1.25rem",
+                background: "white",
+                cursor: "pointer",
+              }}
+              src="https://img.icons8.com/material-sharp/30/000000/github.png"
+              alt="github-icon"
+            />
+          </a>
+        </motion.div>
         <strong>
           <motion.h2
             className="heading-name"
