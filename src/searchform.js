@@ -1,6 +1,16 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Searchform = ({ searchText }) => {
+  const searchVariants = {
+    hidden: {
+      x: "100vw",
+    },
+    visible: {
+      x: 0,
+      transition: { type: "spring", stiffness: 120 },
+    },
+  };
   const [text, setText] = useState("");
   const [showValidTextModal, setShowValidTextModal] = useState(false);
 
@@ -15,24 +25,27 @@ const Searchform = ({ searchText }) => {
 
   const onChangevalue = (e) => {
     e.preventDefault();
-    setText(e.target.value)
+    setText(e.target.value);
     searchText(e.target.value);
-    if(e.target.value === ""){
-      setText("Ruskin Bond")
+    if (e.target.value === "") {
+      setText("Ruskin Bond");
       searchText("Ruskin Bond");
     }
-  }
+  };
 
   return (
     <div>
       <br />
-      <form
+      <motion.form
         onSubmit={handleSubmit}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
+        variants={searchVariants}
+        initial="hidden"
+        animate="visible"
       >
         <input
           type="text"
@@ -51,7 +64,7 @@ const Searchform = ({ searchText }) => {
         >
           Search
         </button>
-      </form>
+      </motion.form>
       <div
         id="popup1"
         class={showValidTextModal ? "overlay modal-active" : "overlay"}
