@@ -115,13 +115,21 @@ ul {
   right: 0.5rem;
   animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
+  width: 70px;
+  height: 70px;
 }
 
 .scroll-icon {
-  padding: 1.25em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background: #0d1117;
+
   fill: white;
+  transform: rotate(-90deg);
 }
 
 .loading-card {
