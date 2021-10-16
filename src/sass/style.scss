@@ -23,22 +23,24 @@ body {
   margin: 0 auto;
 }
 
-.books-bg {
-  background-color: $bgcolor;
-  border-radius: 1rem;
-  padding: 1rem 1rem;
-  transition: 0.2s ease-in-out;
-}
-
-.books-bg:hover {
-  box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-
 img {
   height: 12rem;
   width: 8rem;
   border-radius: 0.5rem;
+}
+
+.github-icon {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 h1 {
@@ -174,6 +176,11 @@ ul {
   }
 }
 
+.loading-card:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .load-more {
   width: max-content;
   display: grid;
@@ -189,12 +196,13 @@ ul {
     color: black;
     border-radius: 0.4rem;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+
 
     &:hover {
       background-color: $footerBgColor;
       color: white;
-      animation: hover 1.3s ease-in-out;
-      transition-delay: 1s;
+      animation: hover .5s ease-in-out;
     }
 
     @keyframes hover {

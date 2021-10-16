@@ -18,25 +18,35 @@ body {
   margin: 0 auto;
 }
 
-.books-bg {
-  background-color: #e0e0e0;
-  border-radius: 1rem;
-  padding: 1rem 1rem;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-}
-
-.books-bg:hover {
-  -webkit-box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 60px rgba(0, 0, 0, 0.2);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
 img {
   height: 12rem;
   width: 8rem;
   border-radius: 0.5rem;
+}
+
+.github-icon {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@-webkit-keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
 h1 {
@@ -192,6 +202,12 @@ ul {
   margin: 0.4rem auto;
 }
 
+.loading-card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
 .load-more {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -211,15 +227,15 @@ ul {
   color: black;
   border-radius: 0.4rem;
   cursor: pointer;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .load-more button:hover {
   background-color: #353434;
   color: white;
-  -webkit-animation: hover 1.3s ease-in-out;
-          animation: hover 1.3s ease-in-out;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-animation: hover .5s ease-in-out;
+          animation: hover .5s ease-in-out;
 }
 
 @-webkit-keyframes hover {

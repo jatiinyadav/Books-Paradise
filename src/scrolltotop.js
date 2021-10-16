@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Arrow from "./img/arrow.png";
 
 export default class ScrollToTop extends Component {
   constructor(props) {
