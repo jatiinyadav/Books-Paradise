@@ -6,18 +6,8 @@ import Footer from "./footer";
 import Book from "./book";
 import LoadingCard from "./loadingCard";
 import "../src/sass/style.css";
-import { motion } from "framer-motion";
 
 const BookDetails = () => {
-  const searchVariants = {
-    hidden: {
-      x: "100vw",
-    },
-    visible: {
-      x: 0,
-      transition: { type: "spring", stiffness: 120 },
-    },
-  };
   const [details, setDetails] = useState([]);
 
   const [term, setTerm] = useState("Ruskin Bond");
@@ -45,7 +35,7 @@ const BookDetails = () => {
 
   return (
     <>
-      <motion.h2
+      <h2
         style={{
           textTransform: "capitalize",
           color: "#DB4437",
@@ -54,12 +44,9 @@ const BookDetails = () => {
           marginBottom: -21,
           fontFamily: "Scheherazade New",
         }}
-        variants={searchVariants}
-        initial="hidden"
-        animate="visible"
       >
         {term}
-      </motion.h2>
+      </h2>
       <Searchform searchText={(text) => setTerm(text)}></Searchform>
       {isLoading ? (
         <section className="container" style={{ padding: "2rem 0rem" }}>

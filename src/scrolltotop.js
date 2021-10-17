@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React, { Component } from "react";
 
 export default class ScrollToTop extends Component {
@@ -36,26 +35,11 @@ export default class ScrollToTop extends Component {
   }
 
   render() {
-    const toTopVariants = {
-      hidden: {
-        y: "-100vh",
-      },
-      visible: {
-        y: 0,
-        transition: { type: "spring", stiffness: 120 },
-      },
-    };
     const { is_visible } = this.state;
     return (
       <div className="scroll-to-top">
         {is_visible && (
-          <motion.div
-            onClick={() => this.scrollToTop()}
-            variants={toTopVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-          >
+          <div onClick={() => this.scrollToTop()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="38.735"
@@ -86,7 +70,7 @@ export default class ScrollToTop extends Component {
                 </g>
               </g>
             </svg>
-          </motion.div>
+          </div>
         )}
       </div>
     );

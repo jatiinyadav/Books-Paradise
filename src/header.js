@@ -1,29 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const Header = () => {
-  const headerVariants = {
-    hidden: {
-      x: "-100vw",
-    },
-    visible: {
-      x: 0,
-      transition: { type: "spring", stiffness: 120 },
-    },
-  };
-  const iconVariants = {
-    hidden: {
-      y: "100vh",
-    },
-    visible: {
-      y: 0,
-      transition: { ease: "easeInOut", stiffness: 120 },
-    },
-  };
   return (
     <>
       <div>
-        <motion.div variants={iconVariants} initial="hidden" animate="visible">
+        <div>
           <a
             className="github-icon"
             href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
@@ -46,9 +27,9 @@ const Header = () => {
               alt="github-icon"
             />
           </a>
-        </motion.div>
+        </div>
         <strong>
-          <motion.h2
+          <h2
             className="heading-name"
             style={{
               background: "none",
@@ -63,12 +44,9 @@ const Header = () => {
               fontFamily: "Scheherazade New",
               textShadow: "2px 2px 3px #b0b0b0",
             }}
-            variants={headerVariants}
-            initial="hidden"
-            animate="visible"
           >
             A Book Library for all Book Lovers
-          </motion.h2>
+          </h2>
         </strong>
       </div>
     </>

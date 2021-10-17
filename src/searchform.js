@@ -1,16 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const Searchform = ({ searchText }) => {
-  const searchVariants = {
-    hidden: {
-      x: "100vw",
-    },
-    visible: {
-      x: 0,
-      transition: { type: "spring", stiffness: 120 },
-    },
-  };
   const [text, setText] = useState("");
   const [showValidTextModal, setShowValidTextModal] = useState(false);
 
@@ -36,16 +26,13 @@ const Searchform = ({ searchText }) => {
   return (
     <div>
       <br />
-      <motion.form
+      <form
         onSubmit={handleSubmit}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
-        variants={searchVariants}
-        initial="hidden"
-        animate="visible"
       >
         <input
           type="text"
@@ -64,7 +51,7 @@ const Searchform = ({ searchText }) => {
         >
           Search
         </button>
-      </motion.form>
+      </form>
       <div
         id="popup1"
         class={showValidTextModal ? "overlay modal-active" : "overlay"}
