@@ -3,9 +3,8 @@ import axios from "axios";
 import logo from "./img/Book.svg";
 import Searchform from "./searchform";
 import Footer from "./footer";
-import Book from "./book";
+import Book from './book';
 import LoadingCard from "./loadingCard";
-import "../src/sass/style.css";
 
 const BookDetails = () => {
   const [details, setDetails] = useState([]);
@@ -22,7 +21,7 @@ const BookDetails = () => {
       );
       setDetails(resources.data.items);
       setIsLoading(false);
-    };
+    }
     fetchDetails();
   }, [term]);
 
@@ -30,8 +29,8 @@ const BookDetails = () => {
     const resources = await axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${term}&maxResults=8&startIndex=${details.length}`
     );
-    setDetails((oldDetails) => [...oldDetails, ...resources.data.items]);
-  };
+    setDetails(oldDetails => [...oldDetails, ...resources.data.items]);
+  }
 
   return (
     <>
@@ -49,12 +48,12 @@ const BookDetails = () => {
       </h2>
       <Searchform searchText={(text) => setTerm(text)}></Searchform>
       {isLoading ? (
-        <section className="container" style={{ padding: "2rem 0rem" }}>
-          <LoadingCard />
-          <LoadingCard />
-          <LoadingCard />
-          <LoadingCard />
-        </section>
+          <section className="container" style={{padding: "2rem 0rem"}}>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
+            <LoadingCard/>
+          </section>
       ) : !details ? (
         <h1
           className="loading-name"
@@ -77,9 +76,7 @@ const BookDetails = () => {
       ) : (
         <section>
           <section className="container" style={{ padding: "2rem 0rem" }}>
-            {details.map((book, index) => (
-              <Book {...book} key={index} />
-            ))}
+            {details.map((book, index) => <Book {...book} key={index}/>)}
             <div className="custom-card">
               <h3 style={{ fontSize: "1.32rem", color: "white" }}>
                 Didn't find the book you love?
@@ -98,8 +95,9 @@ const BookDetails = () => {
                 <span style={{ fontWeight: "bold", color: "black" }}>
                   Genre{" "}
                 </span>
-                or{" "}
+                or {" "}
                 <span style={{ fontWeight: "bold", color: "black" }}>
+
                   Author{" "}
                 </span>
                 in the search box!!
@@ -107,7 +105,7 @@ const BookDetails = () => {
             </div>
           </section>
           <div className="load-more">
-            <button onClick={() => loadMore()}>Load More!</button>
+            <button onClick={()=>loadMore()}>Load More!</button>
           </div>
           <Footer></Footer>
         </section>
