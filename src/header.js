@@ -1,5 +1,5 @@
 import React from "react";
-import GithubLogo from "./img/Github.svg"
+import GithubLogo from "./img/Github.svg";
 import "../src/sass/style.css";
 
 const Header = () => {
@@ -11,7 +11,6 @@ const Header = () => {
           href="https://github.com/jatiinyadav/Books-App-using-ReactJs"
           target="_blank"
           rel="noreferrer"
-
         >
           <img
             className="github-icon"
@@ -42,7 +41,7 @@ const Header = () => {
               textAlign: "center",
               // fontWeight: "bold", //No need of bold because headings are itself bold
               fontFamily: "Scheherazade New",
-              textShadow: "2px 2px 3px #b0b0b0"
+              textShadow: "2px 2px 3px #b0b0b0",
             }}
           >
             A Book Library for all Book Lovers

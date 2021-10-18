@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 const Searchform = ({ searchText }) => {
   const [text, setText] = useState("");
@@ -15,13 +15,13 @@ const Searchform = ({ searchText }) => {
 
   const onChangevalue = (e) => {
     e.preventDefault();
-    setText(e.target.value)
+    setText(e.target.value);
     searchText(e.target.value);
-    if(e.target.value === ""){
-      setText("Ruskin Bond")
+    if (e.target.value === "") {
+      setText("Ruskin Bond");
       searchText("Ruskin Bond");
     }
-  }
+  };
 
   return (
     <div>
