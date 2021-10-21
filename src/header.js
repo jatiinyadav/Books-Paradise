@@ -33,9 +33,6 @@ const Header = () => {
             style={{
               background: "none",
               // borderRadius: "1rem",
-              padding: "1rem",
-              paddingTop: 0,
-              marginTop: 20,
               marginBottom: 50,
               color: "#333",
               textAlign: "center",
