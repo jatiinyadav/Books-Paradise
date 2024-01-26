@@ -39,9 +39,7 @@ const BookDetails = () => {
           textTransform: "capitalize",
           color: "#DB4437",
           fontSize: 40,
-          marginTop: -60,
-          marginBottom: -21,
-          fontFamily: "Scheherazade New",
+          marginTop: -40,
         }}
       >
         {term}
@@ -66,7 +64,6 @@ const BookDetails = () => {
             top: "50%",
             left: "50%",
             fontSize: 33,
-            fontFamily: "Inria Serif",
             transform: "translate(-50%,-50%)",
             textTransform: "capitalize",
           }}
@@ -89,7 +86,7 @@ const BookDetails = () => {
                 style={{ width: "100%" }}
                 src={logo}
                 alt="A man reading a book"
-                srcset=""
+                srcSet=""
               />
 
               <h3 style={{ fontSize: "1.21rem", color: "white" }}>

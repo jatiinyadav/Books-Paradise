@@ -1,12 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: url("../img/Books-Bg1.png");
   background-size: cover;
   background-attachment: fixed;
@@ -14,7 +13,6 @@ body {
 
 .heading-name {
   font-size: 52px;
-  width: 50rem;
   margin: 0 auto;
 }
 
@@ -25,30 +23,17 @@ img {
 }
 
 .github-icon {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@-webkit-keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
   50% {
     opacity: 0.6;
   }
 }
-
 h1 {
   color: black;
   font-size: 1.5rem;
@@ -70,7 +55,7 @@ p {
   font-size: 0.8rem;
 }
 
-input[type="text"] {
+input[type=text] {
   width: 20em;
   height: 3em;
   padding: 10px 10px;
@@ -79,7 +64,6 @@ input[type="text"] {
 a {
   color: #3b3b3b;
   text-decoration: underline;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -88,15 +72,9 @@ a:hover {
 }
 
 button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
@@ -112,11 +90,9 @@ ul {
   height: 100%;
   margin: 0 auto;
   position: relative;
-  display: -ms-grid;
   display: grid;
   grid-gap: 2rem;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
 
@@ -130,8 +106,7 @@ ul {
   position: fixed;
   bottom: 0.5rem;
   right: 0.5rem;
-  -webkit-animation: fadeIn 700ms ease-in-out 1s both;
-          animation: fadeIn 700ms ease-in-out 1s both;
+  animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -140,46 +115,79 @@ ul {
 .scroll-icon {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background: #0d1117;
   fill: white;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/* Basic styling for the input */
+input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling when the input is focused */
+input:focus {
+  outline: none;
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Styling for a disabled input */
+input:disabled {
+  background-color: #f2f2f2;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* Style for the button */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  color: #3498db;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #3498db;
 }
 
 .loading-card {
   margin: 10px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  background-color: #e0e0e0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
   padding: 1rem;
   transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
 }
-
 .loading-card .image {
   height: 12rem;
   width: 8rem;
   margin: 0 auto;
   border-radius: 0.5rem;
 }
-
 .loading-card .content {
   padding: 20px 30px;
 }
-
 .loading-card .image,
 .loading-card h2,
 .loading-card p {
@@ -188,14 +196,11 @@ ul {
   border-radius: 5px;
   background-size: 200% 100%;
   margin: 0.5rem auto;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
 }
-
 .loading-card h2 {
   height: 30px;
 }
-
 .loading-card p {
   height: 20px;
   width: 80%;
@@ -203,66 +208,41 @@ ul {
 }
 
 .loading-card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
 .load-more {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   width: 100%;
   padding: 10px;
   margin-bottom: 50px;
 }
-
 .load-more button {
   padding: 0.7rem 1.4rem 0.7rem 1.4rem;
   background-color: white;
-  border: 1px solid #353434;
+  border: 1px solid rgb(53, 52, 52);
   color: black;
   border-radius: 0.4rem;
   cursor: pointer;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-
 .load-more button:hover {
-  background-color: #353434;
+  background-color: rgb(53, 52, 52);
   color: white;
-  -webkit-animation: hover .5s ease-in-out;
-          animation: hover .5s ease-in-out;
+  animation: hover 0.5s ease-in-out;
 }
-
-@-webkit-keyframes hover {
-  from {
-    background-color: white;
-    color: black;
-  }
-  to {
-    background-color: #353434;
-    color: white;
-  }
-}
-
 @keyframes hover {
   from {
     background-color: white;
     color: black;
   }
   to {
-    background-color: #353434;
+    background-color: rgb(53, 52, 52);
     color: white;
-  }
-}
-
-@-webkit-keyframes shine {
-  to {
-    background-position-x: -200%;
   }
 }
 
@@ -271,9 +251,8 @@ ul {
     background-position-x: -200%;
   }
 }
-
 footer {
-  background: #353434;
+  background: rgb(53, 52, 52);
   padding: 1rem;
   color: white;
   text-align: center;
@@ -281,11 +260,9 @@ footer {
 
 @media screen and (max-width: 1200px) {
   .container {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 @media screen and (max-width: 850px) {
   .github-icon {
     top: 110px;
@@ -294,22 +271,18 @@ footer {
     width: 48rem;
   }
 }
-
 @media screen and (max-width: 768px) {
   .container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .container-articles {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .heading-name {
     font-size: 42px;
     width: 35rem;
   }
 }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -317,7 +290,6 @@ footer {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
-  -webkit-transition: opacity 500ms;
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
@@ -336,7 +308,6 @@ footer {
   border-radius: 5px;
   width: 40%;
   position: relative;
-  -webkit-transition: all 0.52s ease-in-out;
   transition: all 0.52s ease-in-out;
 }
 
@@ -350,7 +321,6 @@ footer {
   position: absolute;
   top: 10px;
   right: 20px;
-  -webkit-transition: all 200ms;
   transition: all 200ms;
   font-size: 30px;
   font-weight: bold;
@@ -373,11 +343,9 @@ footer {
     width: 70%;
   }
 }
-
 @media screen and (max-width: 600px) {
   .container {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   .loading-name {
     width: 90%;
@@ -388,17 +356,14 @@ footer {
     font-size: 2rem;
   }
 }
-
 @media screen and (max-width: 350px) {
   .heading-name {
     width: auto;
     font-size: 1.5rem;
   }
 }
-
 @media screen and (max-width: 200px) {
   .github-icon {
     top: -50px;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

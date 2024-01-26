@@ -10,8 +10,7 @@ $footerBgColor: rgb(53, 52, 52);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: url("../img/Books-Bg1.png");
   background-size: cover;
   background-attachment: fixed;
@@ -19,7 +18,6 @@ body {
 
 .heading-name {
   font-size: 52px;
-  width: 50rem;
   margin: 0 auto;
 }
 
@@ -134,12 +132,56 @@ ul {
   transform: rotate(-90deg);
 }
 
+/* Basic styling for the input */
+input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling when the input is focused */
+input:focus {
+  outline: none;
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Styling for a disabled input */
+input:disabled {
+  background-color: #f2f2f2;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* Style for the button */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  color: #3498db;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}
+
 .loading-card {
   margin: 10px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  background-color: #e0e0e0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
   padding: 1rem;
   transition: 0.2s ease-in-out;
